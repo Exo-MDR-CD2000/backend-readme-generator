@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
 ## Description
-A command-line tool to create a high quality readme file based on the NPM package [inquirer](https://www.npmjs.com/package/inquirer).
+Backend-readme-generator is a command-line tool to create a high quality readme file based on the NPM package [inquirer](https://www.npmjs.com/package/inquirer). It's goal is to reduce the amount of time one needs to create a readme file scratch. It allowed me to look a bit deeper into the inquirer package as it is a usefool tool in prompting questions to a user via command-line. Overall, the project works as intended but can definitely be expanded upon feature wise.
 
 ## Table of Contents
 - [backend-readme-generator](#backend-readme-generator)
@@ -11,22 +11,22 @@ A command-line tool to create a high quality readme file based on the NPM packag
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contribution](#contribution)
-  - [Test](#test)
+  - [Credits](#credits)
   - [License](#license)
   - [Questions](#questions)
 
 ## Installation
-Clone the contents of this repository to your location of choice.
+Clone the contents of this repository to your location of choice. We must also insure that the NPM package inquirer is also installed in our repository. Open a new terminal window within our newly cloned repository and type 'npm init -y'. This will initialize a new npm package with some default answers. Then, we must install inquirer itself by typing 'npm install inquirer@8.2.4'. This will install a specific version of inquirer instead of the latest one.
 
 ## Usage
-Open the repository within your preferred terminal window and type: 'node index.js'. A series of prompts will begin which will ask you to input information for each readme section. If you so choose to include a license for your readme, it will be displayed at the top of the page using a badge from [shields.io](https://shields.io/). The license prompt will include some of the more common licenses but by no mean is it fully exhaustive. 
+Open the repository within your preferred terminal window and type: 'node index.js'. A series of prompts will begin which will ask you to input information for each readme section. If you so choose to include a license for your readme, it will be displayed at the top of the page using a badge from [shields.io](https://shields.io/). The license prompt will include some of the more common licenses but by no mean is it fully extensive. 
 
-## Contribution
+<!-- insert gif demo here -->
+
+## Credits
 - The inquirer documentation [here](https://www.npmjs.com/package/inquirer)
-
-## Test
-N/A
+- The shields.io documentation [here](https://shields.io/)
+- Class notes on Node.js and NPM packages
 
 ## License
 This project is licensed under the MIT license.

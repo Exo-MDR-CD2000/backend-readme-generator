@@ -129,11 +129,14 @@ ${answers.installation}
 ## Usage
 ${answers.usage}
 
-## Contribution
+## How to Contribute
 ${answers.contribution}
 
-## Test
+## Tests
 ${answers.test}
+
+## Credits
+${answers.credits}
 
 ## License
 This project is licensed under the ${answers.license} license.
