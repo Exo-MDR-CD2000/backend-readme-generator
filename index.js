@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { type } = require('os');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -38,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: "Please select a license for your project.",
-        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
+        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'Mozilla', 'ISC', 'LGPL', 'CC0', 'EPL', 'AGPL', 'None'],
     },
     {
         type: 'input',
@@ -49,7 +50,12 @@ const questions = [
         type: 'input',
         name: 'email',
         message: "Please provide your email address.",
-    }
+    },
+    {
+        type: 'input',
+        name: 'credits',
+        message: "Please provide any credits for your project.",
+    },
 ];
 
 // TODO: Create a function to write README file
@@ -62,8 +68,46 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
+
+        //add code to put license color distinction here
+        let licenseColor;
+        switch (answers.license) {
+            case 'MIT':
+                licenseColor = 'brightgreen';
+                break;
+            case 'Apache':
+                licenseColor = 'yellow';
+                break;
+            case 'GPL':
+                licenseColor = 'orange';
+                break;
+            case 'BSD':
+                licenseColor = 'blue';
+                break;
+            case 'Mozilla':
+                licenseColor = 'red';
+                break;
+            case 'ISC':
+                licenseColor = 'green';
+                break;
+            case 'LGPL':
+                licenseColor = 'blueviolet';
+                break;
+            case 'CC0':
+                licenseColor = 'blue';
+                break;
+            case 'EPL':
+                licenseColor = 'orange';
+                break;
+            case 'AGPL':
+                licenseColor = 'blue';
+                break;
+            default:
+                licenseColor = 'lightgrey';
+        }
+
         //add license badge here
-        const licenseBadge = `![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-yellow.svg)`;
+        const licenseBadge = `![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-${licenseColor}.svg)`;
         const readme = `# ${answers.title}
 
 ${licenseBadge}
