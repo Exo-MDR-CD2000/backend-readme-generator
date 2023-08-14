@@ -53,10 +53,51 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log('Success!')
+    );
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        const readme = `# ${answers.title}
+
+
+
+## Description
+${answers.description}
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Test](#test)
+- [License](#license)
+- [Questions](#questions)
+
+## Installation
+${answers.installation}
+
+## Usage
+${answers.usage}
+
+## Contribution
+${answers.contribution}
+
+## Test
+${answers.test}
+
+## License
+This project is licensed under the ${answers.license} license.
+
+## Questions
+If you have any questions regarding this project, please contact me at ${answers.email} or visit my GitHub page at [GitHub Profile](https://github.com/${answers.github}).`;
+
+        writeToFile('README.md', readme);
+    });
+}
 
 // Function call to initialize app
 init();
