@@ -62,8 +62,8 @@ const renderLicenseSection = (license) => {
   if (!licenseBadge) {
     return "";
   }
-  return `## License
-[![License](${licenseBadge})](${licenseLink})
+  return `## License\n
+This project is licensed under [![License](${licenseBadge})](${licenseLink})
 `;
 }
 
@@ -98,11 +98,10 @@ function generateMarkdown(data) {
   ## Credits
   ${data.credits}
 
-  ## License
-  This project is licensed under the ${renderLicenseSection(data.license)} license.
+  ${renderLicenseSection(data.license)}
 
   ## Questions
-  If you have any questions, please contact me at ${data.email} or visit my GitHub page at [GitHub Profile](https://github.com/${data.github}).
+  If you have any questions, please contact me at my [email](${data.email}) or visit my GitHub page at [GitHub Profile](https://github.com/${data.github}).
   
 `;
 }

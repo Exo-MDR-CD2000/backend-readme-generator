@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -38,7 +39,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: "Please select a license for your project.",
-        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'Mozilla', 'ISC', 'LGPL', 'CCO', 'EPL', 'AGPL', 'None'],
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
     },
     {
         type: 'input',
@@ -67,83 +68,9 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
-
-        //add code to put license color distinction here
-        let licenseColor;
-        switch (answers.license) {
-            case 'MIT':
-                licenseColor = 'brightgreen';
-                break;
-            case 'Apache':
-                licenseColor = 'yellow';
-                break;
-            case 'GPL':
-                licenseColor = 'orange';
-                break;
-            case 'BSD':
-                licenseColor = 'blue';
-                break;
-            case 'Mozilla':
-                licenseColor = 'red';
-                break;
-            case 'ISC':
-                licenseColor = 'green';
-                break;
-            case 'LGPL':
-                licenseColor = 'blueviolet';
-                break;
-            case 'CC0':
-                licenseColor = 'blue';
-                break;
-            case 'EPL':
-                licenseColor = 'orange';
-                break;
-            case 'AGPL':
-                licenseColor = 'blue';
-                break;
-            default:
-                licenseColor = 'lightgrey';
-        }
-
-        //add license badge here
-        const licenseBadge = `![License: ${answers.license}](https://img.shields.io/badge/License-${answers.license}-${licenseColor}.svg)`;
-        const readme = `# ${answers.title}
-
-${licenseBadge}
-
-## Description
-${answers.description}
-
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contribution](#contribution)
-- [Test](#test)
-- [License](#license)
-- [Questions](#questions)
-
-## Installation
-${answers.installation}
-
-## Usage
-${answers.usage}
-
-## How to Contribute
-${answers.contribution}
-
-## Tests
-${answers.test}
-
-## Credits
-${answers.credits}
-
-## License
-This project is licensed under the [${answers.license}](https://opensource.org/licenses) license.
-
-## Questions
-If you have any questions regarding this project, please contact me at ${answers.email} or visit my GitHub page at [GitHub Profile](https://github.com/${answers.github}).`;
-
-        writeToFile('README.md', readme);
+        const response = generateMarkdown(answers);
+        console.log(answers);
+        writeToFile('README.md', response);
     });
 }
 
