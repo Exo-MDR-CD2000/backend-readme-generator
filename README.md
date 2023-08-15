@@ -3,7 +3,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)
 
 ## Description
-Backend-readme-generator is a command-line tool to create a high quality readme file based on the NPM package [inquirer](https://www.npmjs.com/package/inquirer). It's goal is to reduce the amount of time one needs to create a readme file scratch. It allowed me to look a bit deeper into the inquirer package as it is a usefool tool in prompting questions to a user via command-line. Overall, the project works as intended but can definitely be expanded upon feature wise.
+Backend-readme-generator is a command-line tool to create a high quality readme file based on the NPM package [inquirer](https://www.npmjs.com/package/inquirer). It's goal is to reduce the amount of time one needs to create a readme file scratch. It allowed me to look a bit deeper into the inquirer package as it is a usefool tool in prompting questions to a user via command-line. Overall, the project works as intended but can definitely be expanded upon feature wise. Listing the specific license version is the next step to improving the distinction upon licenses that have multiple versions. As it currently is, the readme generator provides a link to [opensource](https://opensource.org/licenses/) that has a list of the more common licenses but not the user's specific one.
 
 ## Table of Contents
 - [backend-readme-generator](#backend-readme-generator)
@@ -31,7 +31,7 @@ Open the repository within your preferred terminal window and type: 'node index.
 - Class notes on Node.js and NPM packages
 
 ## License
-This project is licensed under the MIT license.
+This project is licensed under the [MIT](https://opensource.org/licenses) license.
 
 ## Questions
 If you have any questions regarding this project, please contact me at REDACTED or visit my GitHub page at [GitHub Profile](https://github.com/Exo-MDR-CD2000).

@@ -38,7 +38,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: "Please select a license for your project.",
-        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'Mozilla', 'ISC', 'LGPL', 'CC0', 'EPL', 'AGPL', 'None'],
+        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'Mozilla', 'ISC', 'LGPL', 'CCO', 'EPL', 'AGPL', 'None'],
     },
     {
         type: 'input',
@@ -138,7 +138,7 @@ ${answers.test}
 ${answers.credits}
 
 ## License
-This project is licensed under the ${answers.license} license.
+This project is licensed under the [${answers.license}](https://opensource.org/licenses) license.
 
 ## Questions
 If you have any questions regarding this project, please contact me at ${answers.email} or visit my GitHub page at [GitHub Profile](https://github.com/${answers.github}).`;
