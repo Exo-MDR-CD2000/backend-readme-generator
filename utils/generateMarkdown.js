@@ -1,6 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
+
+function getLicenseBadge(license) {
   let badge = "";
   switch (license) {
     case "MIT":
@@ -21,8 +22,9 @@ function renderLicenseBadge(license) {
     default:
       badge = "";
   }
+  return badge;
 }
-
+  
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
@@ -45,41 +47,64 @@ function renderLicenseLink(license) {
       break;
     default:
       link = "";
-  }
-  return link;
+}
+return link;
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-  let section = "";
-  switch (license) {
-    case "MIT":
-      section = "Licensed under the [MIT License](https://opensource.org/licenses/MIT).";
-      break;
-    case "APACHE 2.0":
-      section = "Licensed under the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).";
-      break;
-    case "GPL 3.0":
-      section = "Licensed under the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0).";
-      break;
-    case "BSD 3":
-      section = "Licensed under the [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause).";
-      break;
-    case "None":
-      section = "";
-      break;
-    default:
-      section = "";
+const renderLicenseSection = (license) => {
+  const licenseBadge = getLicenseBadge(license);
+  const licenseLink = renderLicenseLink(license);
+  if (!licenseBadge) {
+    return "";
   }
-  return section;
+  return `## License
+[![License](${licenseBadge})](${licenseLink})
+`;
 }
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [License](#license)
+  - [Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ## How to Contribute
+  ${data.contributing}
+
+  ## Tests
+  ${data.tests}
+
+  ## Credits
+  ${data.credits}
+
+  ## License
+  ${renderLicenseSection(data.license)}
+
+  ## Questions
+  If you have any questions, please contact me at ${data.email} or visit my GitHub page at [GitHub Profile](https://github.com/${data.github}).
+  
 `;
 }
 
 module.exports = generateMarkdown;
+
+
+//did not realize this file earlier. If I can get this working, then it will demonstrate importing and exporting code as well as understanding modularization.
