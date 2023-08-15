@@ -5,16 +5,19 @@ function getLicenseBadge(license) {
   let badge = "";
   switch (license) {
     case "MIT":
-      badge = "https://img.shields.io/badge/License-MIT-yellow.svg";
+      badge = "https://img.shields.io/badge/License-MIT-brightgreen.svg";
       break;
     case "APACHE 2.0":
-      badge = "https://img.shields.io/badge/License-Apache%202.0-blue.svg";
+      badge = "https://img.shields.io/badge/License-Apache%202.0-yellow.svg";
       break;
     case "GPL 3.0":
-      badge = "https://img.shields.io/badge/License-GPLv3-blue.svg";
+      badge = "https://img.shields.io/badge/License-GPLv3-orange.svg";
       break;
     case "BSD 3":
       badge = "https://img.shields.io/badge/License-BSD%203--Clause-blue.svg";
+      break;
+    case "LGPL 3.0":
+      badge = "https://img.shields.io/badge/License-LGPL%203.0-blueviolet.svg";
       break;
     case "None":
       badge = "";
@@ -96,7 +99,7 @@ function generateMarkdown(data) {
   ${data.credits}
 
   ## License
-  ${renderLicenseSection(data.license)}
+  This project is licensed under the ${renderLicenseSection(data.license)} license.
 
   ## Questions
   If you have any questions, please contact me at ${data.email} or visit my GitHub page at [GitHub Profile](https://github.com/${data.github}).
