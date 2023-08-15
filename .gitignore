@@ -132,4 +132,4 @@ dist
 DS_Store/
 package-lock.json
 test.js
-generateMarkdown.js
+utils/generateMarkdown.js
