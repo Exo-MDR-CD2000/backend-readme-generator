@@ -2,7 +2,7 @@
 
 
 ## Description
-Backend-readme-generator is a command-line tool to create a high quality readme file based on the NPM package [inquirer](https://www.npmjs.com/package/inquirer). It's goal is to reduce the amount of time one needs to create a readme file scratch. It allowed me to look a bit deeper into the inquirer package as it is a usefool tool in prompting questions to a user via command-line. Overall, the project works as intended but can definitely be expanded upon feature wise. Adding more licenses to the prompt is certainlky a good idea to encompadd more licenses. This will also require putting more links to each license's specific details. 
+Backend-readme-generator is a command-line tool to create a high quality readme file based on the NPM package [inquirer](https://www.npmjs.com/package/inquirer). It's goal is to reduce the amount of time one needs to create a readme file scratch. It allowed me to look a bit deeper into the inquirer package as it is a usefool tool in prompting questions to a user via command-line. Overall, the project works as intended but can definitely be expanded upon feature wise. Adding more licenses to the prompt is certainlky a good idea to encompass more licenses. This will also require putting more links to each license's specific details. Work can also be done in adding more functionality to remove user requested sections without having to manually edit the readme file in markdown.
 
 ## Table of Contents
 - [backend-readme-generator](#backend-readme-generator)
