@@ -18,12 +18,12 @@ Backend-readme-generator is a command-line tool to create a high quality readme 
 ## Installation
 Clone the contents of this repository to your location of choice. We must also insure that the NPM package inquirer is also installed in our repository. Install inquirer itself by typing 'npm install inquirer@8.2.4'. This will install a specific version of inquirer instead of the latest one. The repository already contains a package.json file so we can skip initializing npm.
 
-<iframe src="https://drive.google.com/file/d/1649zj1VWNTevNWJtlWhtqGjWbNZL91i4/preview" width="640" height="480"></iframe>
+[Install Tutorial](https://drive.google.com/file/d/1649zj1VWNTevNWJtlWhtqGjWbNZL91i4/view)
 
 ## Usage
 Open the repository within your preferred terminal window and type: 'node index.js'. A series of prompts will begin which will ask you to input information for each readme section. If you so choose to include a license for your readme, it will be displayed at the top of the page using a badge from [shields.io](https://shields.io/). The license prompt will include some of the more common licenses but by no mean is it fully extensive. You can simply edit the newly created readme file in your choice of editor afterwards.
 
-<iframe src="https://drive.google.com/file/d/189wLWsFsszVN9ccTjuUBq3kXlxd3R890/preview" width="640" height="480"></iframe>
+[Usage Tutorial](https://drive.google.com/file/d/189wLWsFsszVN9ccTjuUBq3kXlxd3R890/view)
 
 ## Credits
 - The inquirer documentation [here](https://www.npmjs.com/package/inquirer)
